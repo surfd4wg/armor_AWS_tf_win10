@@ -1,4 +1,4 @@
-This is a Terraform script that automatically builds a "hacked" Windows 2012R2 Server in AWS EC2. It also install various programs through a EC2 user data powershell script. The various programs are: -Armor Agent 3.0 -Chrome -IIS -SSH -User + Password
+This is a Terraform script that automatically builds a Windows 10 machine in AWS EC2. It also install various programs through a EC2 user data powershell script. The various programs are: -Armor Agent 3.0 -Chrome -IIS -SSH -User + Password
 
 Rename variables.example to variables.tf, in the same directory as the main.tf file.
 
@@ -16,4 +16,4 @@ If the Armor Agent installed correctly, you should see the c:\armorinstall and c
 
 To change the dimensions of the powershell command window: #Powershell Command Window Size $pshost = get-host $pswindow = $pshost.ui.rawui $newsize = $pswindow.buffersize $newsize.height = 3000 $newsize.width = 200 $pswindow.buffersize = $newsize $newsize = $pswindow.windowsize $newsize.height = 90 $newsize.width = 200 $pswindow.windowsize = $newsize
 
-TO grep for processes, open a powershell command window... function grep { $input | out-string -stream | select-string $args } Get-Process | grep armor
+To grep for processes, open a powershell command window... function grep { $input | out-string -stream | select-string $args } Get-Process | grep armor
